@@ -1,0 +1,25 @@
+cat cus.txt
+
+echo "choose the field name "
+read n
+
+head -1 cus.txt > op.txt
+
+if [ $n = "name" ]
+then
+	tail -n +2 cus.txt | sort -k 2 >> op.txt
+
+cat op.txt
+
+elif [ $n = "email" ]	
+then 
+	tail -n +2 cus.txt | sort -k 3 >> op.txt
+	
+cat op.txt
+	
+else
+	echo "Error"
+fi	
+	
+	
+rm -f op.txt
